@@ -1,0 +1,42 @@
+###Create a new user
+POST http://localhost:5090/auth/signup
+Content-Type: application/json
+
+{
+   "email": "test@test.com",
+    "password": "12345"
+}
+
+###signin as an existing user
+POST http://localhost:5090/auth/signin
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "12345"
+}
+
+### get the currently logged in user
+GET http://localhost:5090/auth/whoami
+
+### sign out
+POST http://localhost:5090/auth/signout
+
+### find a particular user with a given id
+GET http://localhost:5090/auth/2
+
+### find all users with a given email
+
+GET http://localhost:5090/auth
+
+
+### delete a user
+DELETE http://localhost:5090/auth/1
+
+### update
+PATCH http://localhost:5090/auth/2
+Content-Type: application/json
+
+{
+    "email": "aaa@aa.com"
+}
